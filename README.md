@@ -49,4 +49,4 @@ Want to contribute? Great, just submit a pull request and we will get right to i
 License
 ----
 
-See [LICENSE.md](https://github.com/N3gativeBlood/SabertoothInjector/blob/master/LICENSE)
+See [LICENSE.md](https://github.com/InfernoREAL/shadow-client/blob/master/LICENSE.md)
