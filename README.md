@@ -1,4 +1,4 @@
-# Sabertooth Injector!
+# Shadow Client!
 
 
 [![Download the client](https://img.shields.io/badge/download-injector-brightgreen?style=for-the-badge "Download the injector")](https://download_link "Download the injector")
