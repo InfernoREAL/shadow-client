@@ -12,6 +12,7 @@ Sabertooth Injector is an injector for an minecraft bedrock mod client!
   - Give commands!
   - Enchant commands!
   - PvP based!
+  - Works for all versions
 
 # New Features!
 
