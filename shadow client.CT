@@ -8,6 +8,7 @@
       <ID>2009</ID>
       <Description>"Combat"</Description>
       <LastState Value="" RealAddress="00000000"/>
+      <Color>0000FF</Color>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
@@ -57,7 +58,7 @@ dealloc(newmem)
         <CheatEntry>
           <ID>1521</ID>
           <Description>"Rapid Hit + Fastplace"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <Color>000000</Color>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
@@ -79,6 +80,7 @@ unregistersymbol(Rapid)
           <ID>2013</ID>
           <Description>"No Knockback"</Description>
           <LastState/>
+          <Color>000000</Color>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>{ Game   : Minecraft.Windows.exe
 }
@@ -140,12 +142,13 @@ dealloc(originalNoKnock)
       <ID>2010</ID>
       <Description>"Movement"</Description>
       <LastState Value="" RealAddress="00000000"/>
+      <Color>00FF00</Color>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
           <ID>2007</ID>
           <Description>"Longjump / Bhop (sprint)"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <Color>000000</Color>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
@@ -185,74 +188,6 @@ dealloc(Original2)
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>24</ID>
-          <Description>"Speed"</Description>
-          <Options moHideChildren="1"/>
-          <LastState Activated="1"/>
-          <Color>000000</Color>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>[ENABLE]
-
-alloc(speedval,5)
-registersymbol(speedval)
-
-speedval:
-dd (float)0.1000000015
-
-aobscanmodule(SPEED,Minecraft.Windows.exe,F3 0F 10 8F 84 00 00 00 48 8B) // should be unique
-alloc(newmem,$1000,"Minecraft.Windows.exe"+104BDD4)
-
-label(code)
-label(return)
-
-newmem:
-movss xmm1,[rdi+00000084]
-jmp code
-
-code:
-  push eax
-  mov eax,[speedval]
-  mov [rdi+00000084],eax
-  pop eax
-  jmp return
-
-SPEED:
-  jmp newmem
-  nop
-  nop
-  nop
-return:
-registersymbol(SPEED)
-
-[DISABLE]
-
-SPEED:
-  db F3 0F 10 8F 84 00 00 00
-
-unregistersymbol(speedval)
-dealloc(speedval)
-unregistersymbol(SPEED)
-dealloc(newmem)
-</AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>25</ID>
-              <Description>"Value"</Description>
-              <DropDownList>0.1000000015:Default
-0.1299999952:Sprinting
-0.5:X0.1
-1:X1
-2:X2
-5:X5
-10:X10
-</DropDownList>
-              <LastState Value="0.1000000015" Activated="1" RealAddress="7FF67BF30000"/>
-              <VariableType>Float</VariableType>
-              <Address>speedval</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
           <ID>1238</ID>
           <Description>"Vanilla Nofall"</Description>
           <LastState/>
@@ -285,7 +220,7 @@ dealloc(Nofalloriginal)
         <CheatEntry>
           <ID>82</ID>
           <Description>"Liquid Highjump"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <Color>000000</Color>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
@@ -338,12 +273,13 @@ dealloc(WJumpHight)
       <ID>2011</ID>
       <Description>"Visual"</Description>
       <LastState Value="" RealAddress="00000000"/>
+      <Color>FF0000</Color>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
           <ID>1292</ID>
           <Description>"Show Cordinates"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <Color>000000</Color>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
@@ -535,26 +471,13 @@ dealloc(zoomflag)
       <ID>2012</ID>
       <Description>"Other"</Description>
       <LastState Value="" RealAddress="00000000"/>
+      <Color>FFFF00</Color>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
-          <ID>2004</ID>
-          <Description>"CE on top"</Description>
-          <LastState Activated="1"/>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>[ENABLE]
-{$lua}
-MainForm.formStyle='fsSystemStayOnTop'
-
-[DISABLE]
-{$lua}
-MainForm.formStyle='fsNormal'
-</AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
           <ID>9</ID>
           <Description>"Hunger (Offline)"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <Color>000000</Color>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
@@ -626,7 +549,7 @@ dealloc(newmem)
     </CheatEntry>
     <CheatEntry>
       <ID>2005</ID>
-      <Description>"Not tested"</Description>
+      <Description>"Might not work?"</Description>
       <LastState Value="" RealAddress="00000000"/>
       <Color>0500CC</Color>
       <GroupHeader>1</GroupHeader>
@@ -739,6 +662,73 @@ UnRegistersymbol(setRotateBytes)
 DeAlloc(setRotateBytes)
 </AssemblerScript>
         </CheatEntry>
+        <CheatEntry>
+          <ID>24</ID>
+          <Description>"Speed"</Description>
+          <Options moHideChildren="1"/>
+          <LastState/>
+          <Color>000000</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+alloc(speedval,5)
+registersymbol(speedval)
+
+speedval:
+dd (float)0.1000000015
+
+aobscanmodule(SPEED,Minecraft.Windows.exe,F3 0F 10 8F 84 00 00 00 48 8B) // should be unique
+alloc(newmem,$1000,"Minecraft.Windows.exe"+104BDD4)
+
+label(code)
+label(return)
+
+newmem:
+movss xmm1,[rdi+00000084]
+jmp code
+
+code:
+  push eax
+  mov eax,[speedval]
+  mov [rdi+00000084],eax
+  pop eax
+  jmp return
+
+SPEED:
+  jmp newmem
+  nop
+  nop
+  nop
+return:
+registersymbol(SPEED)
+
+[DISABLE]
+
+SPEED:
+  db F3 0F 10 8F 84 00 00 00
+
+unregistersymbol(speedval)
+dealloc(speedval)
+unregistersymbol(SPEED)
+dealloc(newmem)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>25</ID>
+              <Description>"Value"</Description>
+              <DropDownList>0.1000000015:Default
+0.1299999952:Sprinting
+0.5:X0.1
+1:X1
+2:X2
+5:X5
+10:X10
+</DropDownList>
+              <VariableType>Float</VariableType>
+              <Address>speedval</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
@@ -791,13 +781,7 @@ CEPanel1.Caption = ''
 --
 ---- Download
 --------------------
-Download = createButton(CEPanel1)
-Download.Left = 10
-Download.Top = 275
-Download.Width = 160
-Download.Height = 25
-Download.Caption = 'Website'
-Download.onClick = openWebsite
+
 
 
 --------------------
@@ -821,7 +805,7 @@ Loaded = createLabel(CEPanel1)
 Loaded.Left = 18
 Loaded.Top = 95
 Loaded.Visible = false
-Loaded.Caption = 'Enjoy Hacking :)'
+Loaded.Caption = 'Enjoy ShadowClient :)'
 Loaded.Font.Color=0x008000
 Loaded.Font.Size=10
 </LuaScript>
