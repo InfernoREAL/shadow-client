@@ -5,12 +5,12 @@ const GL10 = javax.microedition.khronos.opengles.GL10;
 
 /*
 
-Made by ArceusMatt (c)
-copyright 2018 all rights reserved.
+Made by Inferno (c)
+copyright 2020 all rights reserved.
 
-This script is under no license, free to use & open source however... strict rules may apply.
+This script is under a license, free to use and not open source and strict rules may apply.
 
-"The code is copyrighted by default. People can read the code, but they have no legal right to use it. To use the code, you must contact the author directly and ask for permission."
+"The code is copyrighted by default. People have no legal right to view this. To use the code, you must contact the author directly and ask for permission."
 
 DO NOT copy from this content,
 
@@ -99,7 +99,7 @@ var xray = false;
 /*
 values
 */
-const version = "1.4.5.2";
+const version = "1.9.0.3";
 var aimrange = 7;
 var checkslapper = false;
 var shadow1X = 30;
@@ -597,7 +597,7 @@ var dir2 = new java.io.File(android.os.Environment.getExternalStorageDirectory()
 if(!dir2.exists() || !dir2.isDirectory()){
 dir2.mkdir();
 }
-pList.push("arceusmatt");
+pList.push("Inferno");
 var file1 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/Shadow", "beta.json");
 if(file1.exists())file1.delete();
 var file2 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/Shadow", "setting.json");
@@ -845,7 +845,7 @@ ModPE.JSON = {
 
 /*
 func getUpdate()
-made by ArceusMatt
+made by Inferno
 By using a get request to a github json file
 we grab json that contains the new version number
 & compare it to the version number in the script.
@@ -854,7 +854,7 @@ function getUpdate(){
 /*
 Hopefully microsoft doesn't remove raw from github.
 */
-var url = "https://raw.githubusercontent.com/ArceusMatt/Shadow/master/version.json";
+var url = "https://raw.githubusercontent.com/Inferno/Shadow/master/version.json";
 /*var url = "https://pastebin.com/raw/ETWvzH2y";*/
 var content = ModPE.getFromUrl(url);
 if(typeof(content) != "undefined" || content != 0 || content != null || content != ""){
@@ -887,7 +887,7 @@ var mods_ = new java.io.File(android.os.Environment.getExternalStorageDirectory(
 
 /*
 func deleteScript(String client)
-made by ArceusMatt
+made by Inferno
 This deletes the file from downloads.
 */
 function deleteScript(client){
@@ -897,7 +897,7 @@ file.delete();
 
 /*
 func checkScripts()
-made by ArceusMatt
+made by Inferno
 This runs through all the js files then executes the delete function if the file matches in an array.
 */
 function checkScripts(){
@@ -917,7 +917,7 @@ print("Deleted: "+files1_[i]);
 
 /*
 func getScripts()
-made by ArceusMatt
+made by Inferno
 This gets all mod files in the downloads folder then begins the check process.
 */
 function getScripts(){
@@ -935,7 +935,7 @@ checkScripts();
 function detect(){
 try {
 var url2 = "https://pastebin.com/raw/2GXuTjNf";
-/*var url2 = "https://raw.githubusercontent.com/ArceusMatt/Shadow/master/Projects/skid_list.json";*/
+/*var url2 = "https://raw.githubusercontent.com/Inferno/Shadow/master/Projects/skid_list.json";*/
 var content2 = ModPE.getFromUrl(url2);
 if(typeof(content2) != "undefined" || content2 != 0 || content2 != null || content2 != ""){
 
@@ -956,7 +956,7 @@ var tutorialz = [];
 function getTuts(){
 try {
 var url3 = "https://pastebin.com/raw/cMKk4GUH";
-/*var url3 = "https://raw.githubusercontent.com/ArceusMatt/Shadow/master/tutorials.json";*/
+/*var url3 = "https://raw.githubusercontent.com/Inferno/Shadow/master/tutorials.json";*/
 var content3 = ModPE.getFromUrl(url3);
 if(typeof(content3) != "undefined" || content3 != 0 || content3 != null || content3 != ""){
 
@@ -975,7 +975,7 @@ getTuts();
 
 /*
 func getAddress()
-made by ArceusMatt
+made by Inferno
 
 THIS IS ONLY USED TO GET YOUR IP TO MAKE IT VIEWABLE TO _YOU_ IN FEATURES.
 
@@ -1008,7 +1008,7 @@ var portz = [];
 function getServerz(){
 try {
 var url5 = "https://pastebin.com/raw/huEVDmqn";
-/*var url5 = "https://raw.githubusercontent.com/ArceusMatt/Shadow/master/servers.json";*/
+/*var url5 = "https://raw.githubusercontent.com/Inferno/Shadow/master/servers.json";*/
 var content5 = ModPE.getFromUrl(url5);
 if(typeof(content5) != "undefined" || content5 != 0 || content5 != null || content5 != ""){
 var serz = ModPE.JSON.parse(content5);
@@ -1027,45 +1027,6 @@ print(error+"");
 }
 }
 getServerz();
-
-var dcount = "site down";
-var modz = "55";
-var otherz = "35";
-function getCountz(){
-try {
-var url6 = "http://depresso.tk/Shadow_users.php";
-var content6 = ModPE.getFromUrl(url6);
-if(typeof(content6) != "undefined" || content6 != 0 || content6 != null || content6 != ""){
-var json6 = JSON.parse(content6);
-dcount = json6.count;
-}
-} catch(error) {
-print(error+" #"+error.lineNumber);
-}
-}
-/*getCountz();*/
-
-function getPlayers(site) {
-var ctx = new java.lang.Runnable({
-run: function (){
-try{
-var url = new java.net.URL(site);
-var openCon = url.openConnection();
-openCon.setRequestMethod("POST");
-openCon.setDoOutput(true);
-openCon.connect();
-openCon.getContentLength();
-var inStream = openCon.getInputStream();
-var aByte = java.lang.reflect.Array.newInstance(java.lang.Byte.TYPE, 1024);
-inStream.close();
-}catch(e){
-print(e);
-}
-}
-});
-var threadd = new java.lang.Thread(ctx);
-threadd.start();
-}
 
 var ch3;
 function testing(){
@@ -1118,7 +1079,7 @@ function urlToString (url, result) {
 custom designs
 func styleButton() 
 func styleInput()
-made by ArceusMatt & godsoft029
+made by Inferno & godsoft029
 */
 function styleButton(mod, desc) {
 let button = new android.widget.Button(ctx);
@@ -1174,7 +1135,7 @@ return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
 /*
 Main button
 func showMenuBtn()
-Any clients with this has skidded from me.
+Any clients with this has skidded from me and are dickywads!!!!!!!! ---Inferno.
 */
 
 var isMoving1 = false;
@@ -1242,7 +1203,7 @@ android.widget.Toast.makeText(MainActivity, error, 1)
 }));
 }
 showMenuBtn();
-
+//skid bitch
 var dragop = {
 File: {
 dragopDir: android.os.Environment.getExternalStorageDirectory() + "/DragOP/",
@@ -4321,7 +4282,7 @@ dialog.show();
 }));
 oLayout.addView(f3);*/
 
-var tut = new styleButton("Tutorials", "View the latest tutorials by ArceusMatt.");
+var tut = new styleButton("Tutorials", "View the latest tutorials by Inferno.");
 tut.setOnClickListener(new android.view.View.OnClickListener() ,{
 onClick: function (v) {
 var alert = new android.app.AlertDialog.Builder(MainActivity);
@@ -4513,7 +4474,7 @@ mainMenu();
 aLayout.addView(exit);
 
 var title = new android.widget.TextView(ctx);
-title.setText("Shadow made by ArceusMatt");
+title.setText("Shadow made by Inferno");
 title.setTextSize(20);
 title.setTextColor(android.graphics.Color.WHITE);
 title.setGravity(android.view.Gravity.CENTER);
@@ -4526,7 +4487,7 @@ twitter.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function (v) {
 var twi = new android.content.Intent(MainActivity);
 twi.setAction(android.content.Intent.ACTION_VIEW);
-twi.setData(android.net.Uri.parse("https://twitter.com/ArceusMatt?s=09"));
+twi.setData(android.net.Uri.parse("https://twitter.com/Inferno?s=09"));
 MainActivity.startActivity(twi);
 }
 }));
@@ -4565,7 +4526,7 @@ yt.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function (v) {
 var tub = new android.content.Intent(MainActivity);
 tub.setAction(android.content.Intent.ACTION_VIEW);
-tub.setData(android.net.Uri.parse("https://www.youtube.com/user/Arceusmatt"));
+tub.setData(android.net.Uri.parse("https://www.youtube.com/user/Inferno"));
 MainActivity.startActivity(tub);
 }
 }));
@@ -4627,7 +4588,7 @@ linkz.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function (v) {
 var myl = new android.content.Intent(MainActivity);
 myl.setAction(android.content.Intent.ACTION_VIEW);
-myl.setData(android.net.Uri.parse("https://arceusmatt.github.io/Shadow"));
+myl.setData(android.net.Uri.parse("https://Inferno.github.io/Shadow"));
 MainActivity.startActivity(myl);
 }
 }));
@@ -5439,7 +5400,7 @@ yes.setOnClickListener(new android.view.View.OnClickListener() ,{
 onClick: function (view) {
 var dis = new android.content.Intent(MainActivity);
 dis.setAction(android.content.Intent.ACTION_VIEW);
-dis.setData(android.net.Uri.parse("https://twitter.com/ArceusMatt"));
+dis.setData(android.net.Uri.parse("https://twitter.com/Inferno"));
 MainActivity.startActivity(dis);
 editor.dismiss();
 }
