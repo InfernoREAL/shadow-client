@@ -777,9 +777,40 @@ UDF1.formStyle='fsSystemStayOnTop'
 UDF1.formStyle='fsNormal'
 </AssemblerScript>
     </CheatEntry>
+    <CheatEntry>
+      <ID>2017</ID>
+      <Description>"the bad attach (only works if CE is not attached to anything)"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <Color>000000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+getAutoAttachList().add("minecraft.windows.exe")
+
+[DISABLE]
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2018</ID>
+      <Description>"even tho it freezes for a little bit its a better attach"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <Color>000000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+if getProcessIDFromProcessName('Minecraft.Windows.exe') ~= nil then
+      openProcess('Minecraft.Windows.exe')
+end
+
+[DISABLE]
+</AssemblerScript>
+    </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
-  <Comments>bruh</Comments>
+  <Comments>bruh
+</Comments>
   <LuaScript>---attach button
 function UDF1_CEButton1Click(sender)
 if getProcessIDFromProcessName('Minecraft.Windows.exe') ~= nil then
