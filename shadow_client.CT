@@ -779,6 +779,7 @@ UDF1.formStyle='fsNormal'
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
+  <Comments>bruh</Comments>
   <LuaScript>---attach button
 function UDF1_CEButton1Click(sender)
 if getProcessIDFromProcessName('Minecraft.Windows.exe') ~= nil then
