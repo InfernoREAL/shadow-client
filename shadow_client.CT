@@ -5,6 +5,13 @@
   </Forms>
   <CheatEntries>
     <CheatEntry>
+      <ID>2019</ID>
+      <Description>"UnLovedCookie Was Here owo"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>C080FF</Color>
+      <GroupHeader>1</GroupHeader>
+    </CheatEntry>
+    <CheatEntry>
       <ID>2009</ID>
       <Description>"Combat"</Description>
       <LastState Value="" RealAddress="00000000"/>
