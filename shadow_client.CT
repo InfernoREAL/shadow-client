@@ -5,6 +5,20 @@
   </Forms>
   <CheatEntries>
     <CheatEntry>
+      <ID>2022</ID>
+      <Description>"compact stuff"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <Color>000000</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+LuaCall(function cycleFullCompact(sender,force) local state = not(compactmenuitem.Caption == 'Compact View Mode'); if force~=nil then state = not force end; compactmenuitem.Caption = state and 'Compact View Mode' or 'Full View Mode'; getMainForm().Splitter1.Visible = state; getMainForm().Panel4.Visible    = state; getMainForm().Panel5.Visible    = state; end; function addCompactMenu() if compactmenualreadyexists then return end; local parent = getMainForm().Menu.Items; compactmenuitem = createMenuItem(parent); parent.add(compactmenuitem); compactmenuitem.Caption = 'Compact View Mode'; compactmenuitem.OnClick = cycleFullCompact; compactmenualreadyexists = 'yes'; end; addCompactMenu(); cycleFullCompact(nil,true))
+
+[DISABLE]
+LuaCall(cycleFullCompact(nil,false))
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
       <ID>2019</ID>
       <Description>"UnLovedCookie Was Here owo"</Description>
       <LastState Value="" RealAddress="00000000"/>
@@ -671,7 +685,7 @@ DeAlloc(setRotateBytes)
         </CheatEntry>
         <CheatEntry>
           <ID>24</ID>
-          <Description>"Speed"</Description>
+          <Description>"Spid"</Description>
           <Options moHideChildren="1"/>
           <LastState/>
           <Color>000000</Color>
@@ -739,73 +753,19 @@ dealloc(newmem)
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
-      <ID>2014</ID>
-      <Description>"ShOw Me Da ThIng"</Description>
-      <Options moHideChildren="1"/>
-      <LastState/>
-      <Color>000000</Color>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-LuaCall(UDF1.Visible = true)
-
-[DISABLE]
-LuaCall(UDF1.Visible = false)
-</AssemblerScript>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>2016</ID>
-      <Description>"CE on top"</Description>
-      <Options moHideChildren="1"/>
-      <LastState/>
-      <Color>000000</Color>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-{$lua}
-MainForm.formStyle='fsSystemStayOnTop'
-
-[DISABLE]
-{$lua}
-MainForm.formStyle='fsNormal'
-</AssemblerScript>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>2015</ID>
-      <Description>"UDF1 on top"</Description>
-      <Options moHideChildren="1"/>
-      <LastState/>
-      <Color>000000</Color>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-{$lua}
-UDF1.formStyle='fsSystemStayOnTop'
-
-[DISABLE]
-{$lua}
-UDF1.formStyle='fsNormal'
-</AssemblerScript>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>2017</ID>
-      <Description>"the bad attach (only works if CE is not attached to anything)"</Description>
-      <Options moHideChildren="1"/>
-      <LastState/>
-      <Color>000000</Color>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-{$lua}
-getAutoAttachList().add("minecraft.windows.exe")
-
-[DISABLE]
-</AssemblerScript>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>2018</ID>
-      <Description>"even tho it freezes for a little bit its a better attach"</Description>
-      <Options moHideChildren="1"/>
-      <LastState/>
-      <Color>000000</Color>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
+      <ID>2023</ID>
+      <Description>"Attach"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2018</ID>
+          <Description>"even tho it freezes for a little bit its a better attach"</Description>
+          <Options moHideChildren="1"/>
+          <LastState/>
+          <Color>000000</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
 {$lua}
 if getProcessIDFromProcessName('Minecraft.Windows.exe') ~= nil then
       openProcess('Minecraft.Windows.exe')
@@ -813,6 +773,123 @@ end
 
 [DISABLE]
 </AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2017</ID>
+          <Description>"the bad attach (only works if CE is not attached to anything)"</Description>
+          <Options moHideChildren="1"/>
+          <LastState/>
+          <Color>000000</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+getAutoAttachList().add("minecraft.windows.exe")
+
+[DISABLE]
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2020</ID>
+      <Description>"OMG wait all this did only Simann?!"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <Color>0CB439</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2014</ID>
+          <Description>"ShOw Me Da ThIng"</Description>
+          <Options moHideChildren="1"/>
+          <LastState/>
+          <Color>000000</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+LuaCall(UDF1.Visible = true)
+
+[DISABLE]
+LuaCall(UDF1.Visible = false)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2015</ID>
+          <Description>"UDF1 on top"</Description>
+          <Options moHideChildren="1"/>
+          <LastState/>
+          <Color>000000</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+UDF1.formStyle='fsSystemStayOnTop'
+
+[DISABLE]
+{$lua}
+UDF1.formStyle='fsNormal'
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2016</ID>
+          <Description>"CE on top"</Description>
+          <Options moHideChildren="1"/>
+          <LastState/>
+          <Color>000000</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+MainForm.formStyle='fsSystemStayOnTop'
+[DISABLE]
+{$lua}
+MainForm.formStyle='fsNormal'
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2021</ID>
+          <Description>"Partee(dont use with compact modeeee)"</Description>
+          <Options moHideChildren="1"/>
+          <LastState/>
+          <Color>000000</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+LuaCall(getMainForm().Color = 47788)
+//i really did found this myself
+[DISABLE]
+LuaCall(getMainForm().Color = 536870912)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2025</ID>
+          <Description>"Frick my CE reel good"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+controlMainForm = getMainForm()
+AddressList = getAddressList()
+  control_setVisible(wincontrol_getControl(controlMainForm,0), false)
+  control_setVisible(wincontrol_getControl(controlMainForm,2), false)
+  control_setVisible(wincontrol_getControl(controlMainForm,3), false)
+
+  AddressListTreeview = component_getComponent(AddressList,0)
+  AddressListHeader   = component_getComponent(AddressList,1)
+  setMethodProperty(AddressListHeader  ,"OnSectionClick",nil)
+  setMethodProperty(AddressListTreeview,"OnDragOver"    ,nil)
+  setMethodProperty(AddressListTreeview,"OnDragDrop"    ,nil)
+  setMethodProperty(AddressListTreeview,"OnEndDrag"     ,nil)
+
+  ShowMainWindowTimer = createTimer(nil,false)
+  timer_setInterval(ShowMainWindowTimer, 1)
+  timer_onTimer(ShowMainWindowTimer, function (sender)
+    object_destroy(sender)
+    control_setVisible(controlMainForm,true)
+    form_setMenu(controlMainForm,nil)
+  end)
+  timer_setEnabled(ShowMainWindowTimer, true)
+  showMessage('lol')
+---lol
+[DISABLE]
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
@@ -842,7 +919,7 @@ unregistersymbol(Rapid)]]
 autoAssemble(Scriptdisable)
 end
 end
----rapid bzpass
+---rapid bypass
 if UDF1_CECheckbox2.Checked then
 local Scriptenable = [[aobscanmodule(BypassRapid,Minecraft.Windows.exe,41 80 38 00 74 ?? 85 D2 0F)
 alloc(newmem,$1000,"Minecraft.Windows.exe"+B7FC10)
@@ -884,102 +961,216 @@ end
 ---no knocbacc
 function UDF1_CECheckbox3Change(sender)
 if UDF1_CECheckbox3.Checked then
-local Scriptenable = [[
-aobscanmodule(Rapid,Minecraft.Windows.exe,41 80 38 00 74 ?? 85 D2 0F)
-registersymbol(Rapid)
+local Scriptenable = [[aobscanmodule(NoKnockback,Minecraft.Windows.exe,48 FF A0 ?? ?? ?? ?? 8B 02 89 81 ?? ?? ?? ?? 8B 42 04 89 81 ?? ?? ?? ?? 8B 42 08 89 81 ?? ?? ?? ?? C3) // should be unique
+alloc(originalNoKnock,24)
+registersymbol(originalNoKnock)
+registersymbol(NoKnockback)
 
-Rapid+3:
-  db 01]]
+///////////////////////////
+originalNoKnock:
+readmem(NoKnockback+9,24)
+//////////////////////////
+
+NoKnockback+9:
+  db 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+]]
 autoAssemble(Scriptenable)
 else
-local Scriptdisable = [[Rapid+3:
-  db 00
+local Scriptdisable = [[NoKnockback+9:
+  readmem(originalNoKnock,24)
 
-unregistersymbol(Rapid)]]
+unregistersymbol(NoKnockback)
+unregistersymbol(original)
+dealloc(originalNoKnock)]]
 autoAssemble(Scriptdisable)
 end
 end
-
+---Longjump / Bhop (sprint)
 function UDF1_CECheckbox4Change(sender)
 if UDF1_CECheckbox4.Checked then
-local record = addresslist.getMemoryRecordByDescription("Longjump / Bhop (sprint)")
-record.Active = true
-else
-local record = addresslist.getMemoryRecordByDescription("Longjump / Bhop (sprint)")
-record.Active = false
-end
-end
+local Scriptenable = [[aobscanmodule(LongOst,Minecraft.Windows.exe,0F B7 C8 F3 0F 10 0C 8A)
+alloc(Original1,8)
+registersymbol(Original1)
+alloc(Original2,8)
+registersymbol(Original2)
+registersymbol(LongOst)
 
+///////////////////////////
+Original1:
+readmem(LongOst+08,8)
+Original2:
+readmem(LongOst+28,8)
+//////////////////////////
+
+LongOst+08:
+  db 90 90 90 90 90 90 90 90
+
+LongOst+28:
+  db 90 90 90 90 90 90 90 90
+
+]]
+autoAssemble(Scriptenable)
+else
+local Scriptdisable = [[LongOst+08:
+  readmem(Original1,8)
+
+LongOst+28:
+  readmem(Original2,8)
+
+
+unregistersymbol(LongOst)
+unregistersymbol(Original1)
+dealloc(Original1)
+unregistersymbol(Original2)
+dealloc(Original2)]]
+autoAssemble(Scriptdisable)
+end
+end
+---Vanilla Nofall
 function UDF1_CECheckbox5Change(sender)
 if UDF1_CECheckbox5.Checked then
-local record = addresslist.getMemoryRecordByDescription("Vanilla Nofall")
-record.Active = true
-else
-local record = addresslist.getMemoryRecordByDescription("Vanilla Nofall")
-record.Active = false
-end
-end
+local Scriptenable = [[aobscanmodule(Nofall,Minecraft.Windows.exe,F3 0F 5C C6 F3 0F 11 83 ?? ?? 00 00 EB)
+alloc(Nofalloriginal,8)
+registersymbol(Nofalloriginal)
+registersymbol(Nofall)
 
+///////////////////////////
+Nofalloriginal:
+readmem(Nofall+4,8)
+//////////////////////////
+
+Nofall+4:
+  db 90 90 90 90 90 90 90 90
+]]
+autoAssemble(Scriptenable)
+else
+local Scriptdisable = [[Nofall+4:
+  readmem(Nofalloriginal,8)
+
+unregistersymbol(Nofall)
+unregistersymbol(Nofalloriginal)
+dealloc(Nofalloriginal)]]
+autoAssemble(Scriptdisable)
+end
+end
+---Liquid Highjump
 function UDF1_CECheckbox6Change(sender)
 if UDF1_CECheckbox6.Checked then
-local record = addresslist.getMemoryRecordByDescription("Liquid Highjump")
-record.Active = true
-else
-local record = addresslist.getMemoryRecordByDescription("Liquid Highjump")
-record.Active = false
-end
-end
+local Scriptenable = [[
 
+aobscanmodule(WaterJump,Minecraft.Windows.exe,89 ?? ?? ?? 00 00 F3 0F 58 ?? ?? ?? 00 00 F3 0F 11 ?? ?? ?? 00 00 EB ??) // should be unique
+alloc(newmem,$1000,"Minecraft.Windows.exe"+E0B38E)
+alloc(WJumpOriginal,8)
+alloc(WJumpHight,4)
+
+label(code)
+label(return)
+///////////////////////////
+WJumpHight:
+  dd (float)0.63
+WJumpOriginal:
+readmem(WaterJump+E,8)
+//////////////////////////
+newmem:
+
+code:
+  movss xmm6,[WJumpHight]
+  readmem(WaterJump+E,8)
+  jmp return
+
+WaterJump+E:
+  jmp newmem
+  nop
+  nop
+  nop
+return:
+registersymbol(WaterJump)
+registersymbol(WJumpOriginal)
+registersymbol(WJumpHight)
+]]
+autoAssemble(Scriptenable)
+else
+local Scriptdisable = [[
+WaterJump+E:
+    readmem(WJumpOriginal,8)
+
+unregistersymbol(WaterJump)
+unregistersymbol(WJumpOriginal)
+unregistersymbol(WJumpHight)
+dealloc(newmem)
+dealloc(WJumpOriginal)
+dealloc(WJumpHight)]]
+autoAssemble(Scriptdisable)
+end
+end
+---Show Cordinates
 function UDF1_CECheckbox7Change(sender)
 if UDF1_CECheckbox7.Checked then
-local record = addresslist.getMemoryRecordByDescription("Show Cordinates")
-record.Active = true
+local Scriptenable = [[
+aobscanmodule(ShowCords,Minecraft.Windows.exe,83 FA 0E 7E ?? 49 8D 80 ?? ?? 00 00) // should be unique
+alloc(ShowCordsBytes,2)
+registersymbol(ShowCords)
+registersymbol(ShowCordsBytes)
+////////////////////////////
+ShowCordsBytes:
+readmem(ShowCords+15,2)
+////////////////////////////
+ShowCords+15:
+  db 90 90
+]]
+autoAssemble(Scriptenable)
 else
-local record = addresslist.getMemoryRecordByDescription("Show Cordinates")
-record.Active = false
+local Scriptdisable = [[
+ShowCords+15:
+  readmem(ShowCordsBytes,2)
+
+unregistersymbol(ShowCords)
+unregistersymbol(ShowCordsBytes)
+dealloc(ShowCordsBytes)]]
+autoAssemble(Scriptdisable)
 end
 end
 
 function UDF1_CECheckbox8Change(sender)
 if UDF1_CECheckbox8.Checked then
-local record = addresslist.getMemoryRecordByDescription("No Fire animation (buggy)")
-record.Active = true
+local Scriptenable = [[]]
+autoAssemble(Scriptenable)
 else
-local record = addresslist.getMemoryRecordByDescription("No Fire animation (buggy)")
-record.Active = false
+local Scriptdisable = [[]]
+autoAssemble(Scriptdisable)
 end
 end
 
 function UDF1_CECheckbox9Change(sender)
 if UDF1_CECheckbox9.Checked then
-local record = addresslist.getMemoryRecordByDescription("No Hurtcam")
-record.Active = true
+local Scriptenable = [[]]
+autoAssemble(Scriptenable)
 else
-local record = addresslist.getMemoryRecordByDescription("No Hurtcam")
-record.Active = false
+local Scriptdisable = [[]]
+autoAssemble(Scriptdisable)
 end
 end
 
 function UDF1_CECheckbox10Change(sender)
 if UDF1_CECheckbox10.Checked then
-local record = addresslist.getMemoryRecordByDescription("Hunger (Offline)")
-record.Active = true
+local Scriptenable = [[]]
+autoAssemble(Scriptenable)
 else
-local record = addresslist.getMemoryRecordByDescription("Hunger (Offline)")
-record.Active = false
+local Scriptdisable = [[]]
+autoAssemble(Scriptdisable)
 end
 end
 
 function UDF1_CECheckbox11Change(sender)
 if UDF1_CECheckbox11.Checked then
-local record = addresslist.getMemoryRecordByDescription("Offline godmode")
-record.Active = true
+local Scriptenable = [[]]
+autoAssemble(Scriptenable)
 else
-local record = addresslist.getMemoryRecordByDescription("Offline godmode")
-record.Active = false
+local Scriptdisable = [[]]
+autoAssemble(Scriptdisable)
 end
 end
-
+---stay on top button
 function UDF1_CECheckbox12Change(sender)
 if UDF1_CECheckbox12.Checked then
 UDF1.formStyle='fsSystemStayOnTop'
