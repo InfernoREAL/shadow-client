@@ -328,13 +328,44 @@ dealloc(WJumpOriginal)
 dealloc(WJumpHight)
 </AssemblerScript>
             </CheatEntry>
+            <CheatEntry>
+              <ID>93</ID>
+              <Description>"Speed"</Description>
+              <VariableType>Float</VariableType>
+              <Address>"Minecraft.Windows.exe"+030366B8</Address>
+              <Offsets>
+                <Offset>9C</Offset>
+                <Offset>1F8</Offset>
+                <Offset>18</Offset>
+                <Offset>410</Offset>
+                <Offset>78</Offset>
+                <Offset>18</Offset>
+                <Offset>10</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>85</ID>
+              <Description>"AirJump"</Description>
+              <LastState Value="16777473" RealAddress="22916673DB8"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"Minecraft.Windows.exe"+03036708</Address>
+              <Offsets>
+                <Offset>178</Offset>
+                <Offset>0</Offset>
+                <Offset>150</Offset>
+                <Offset>78</Offset>
+                <Offset>68</Offset>
+                <Offset>20</Offset>
+                <Offset>10</Offset>
+              </Offsets>
+            </CheatEntry>
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>2011</ID>
           <Description>"Visual"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <Color>FF0000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -534,7 +565,7 @@ dealloc(zoomflag)
           <ID>2012</ID>
           <Description>"Other"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <Color>C08000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -609,6 +640,22 @@ Godmode:
 unregistersymbol(Godmode)
 dealloc(newmem)
 </AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>123</ID>
+              <Description>"Fake Creative"</Description>
+              <LastState Value="0" RealAddress="229166759F4"/>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"Minecraft.Windows.exe"+03036708</Address>
+              <Offsets>
+                <Offset>B44</Offset>
+                <Offset>0</Offset>
+                <Offset>AC0</Offset>
+                <Offset>60</Offset>
+                <Offset>20</Offset>
+                <Offset>0</Offset>
+                <Offset>0</Offset>
+              </Offsets>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
@@ -1001,42 +1048,13 @@ AddressList = getAddressList()
     <CheatEntry>
       <ID>2036</ID>
       <Description>"Has not been added to gui yet"</Description>
-      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <LastState Value="" RealAddress="00000000"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
-          <ID>93</ID>
-          <Description>"Speed"</Description>
-          <VariableType>Float</VariableType>
-          <Address>"Minecraft.Windows.exe"+030366B8</Address>
-          <Offsets>
-            <Offset>9C</Offset>
-            <Offset>1F8</Offset>
-            <Offset>18</Offset>
-            <Offset>410</Offset>
-            <Offset>78</Offset>
-            <Offset>18</Offset>
-            <Offset>10</Offset>
-          </Offsets>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>85</ID>
-          <Description>"AirJump"</Description>
-          <VariableType>4 Bytes</VariableType>
-          <Address>"Minecraft.Windows.exe"+03036708</Address>
-          <Offsets>
-            <Offset>178</Offset>
-            <Offset>0</Offset>
-            <Offset>150</Offset>
-            <Offset>78</Offset>
-            <Offset>68</Offset>
-            <Offset>20</Offset>
-            <Offset>10</Offset>
-          </Offsets>
-        </CheatEntry>
-        <CheatEntry>
           <ID>2035</ID>
           <Description>"Fullbright"</Description>
+          <LastState Value="1" RealAddress="229074E1B30"/>
           <VariableType>Float</VariableType>
           <Address>"Minecraft.Windows.exe"+02FFECD8</Address>
           <Offsets>
@@ -1313,9 +1331,8 @@ AddressList = getAddressList()
         <Element Offset="3320" Vartype="String" Bytesize="10" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3330" Vartype="Byte" Bytesize="1" RLECount="2" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3332" Vartype="4 Bytes" Bytesize="4" RLECount="5" DisplayMethod="Unsigned Integer"/>
-        <Element Offset="3352" Vartype="String" Bytesize="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3352" Vartype="String" Bytesize="7" RLECount="2" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3359" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
-        <Element Offset="3359" Vartype="String" Bytesize="7" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3360" Vartype="4 Bytes" Bytesize="4" RLECount="14" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3416" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3424" Vartype="4 Bytes" Bytesize="4" RLECount="18" DisplayMethod="Unsigned Integer"/>
