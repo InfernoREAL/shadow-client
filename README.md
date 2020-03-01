@@ -36,6 +36,9 @@ Want to contribute? Great, just submit a pull request and we will get right to i
 ```
 ● Inferno
 ● deadsilence
+● zxno
+● unlovedcookie
+● simann
 ● aaron
 ● unknown
 ```
