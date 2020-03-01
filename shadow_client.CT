@@ -334,7 +334,7 @@ dealloc(WJumpHight)
           <ID>2011</ID>
           <Description>"Visual"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
           <Color>FF0000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -528,90 +528,28 @@ dealloc(zoomflag)
                 </CheatEntry>
               </CheatEntries>
             </CheatEntry>
-            <CheatEntry>
-              <ID>2020</ID>
-              <Description>"FullBright"</Description>
-              <LastState/>
-              <Color>FF8080</Color>
-              <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>{ Game   : Minecraft.Windows.exe
-}
-[ENABLE]
-aobscanmodule(Gamma,Minecraft.Windows.exe,F3 0F 10 81 F0 00 00 00 C3 CC CC CC CC CC CC CC CC CC CC CC 48 8B 11)
-alloc(newmem,$1000,"Minecraft.Windows.exe"+6652EC)
-alloc(GammaBytes,8)
-alloc(GammaAddress,4)
-label(code)
-label(return)
-///////////////////////////
-GammaBytes:
-readmem(Gamma,8)
-GammaAddress:
-  dq (float)4
-//////////////////////////
-newmem:
-
-code:
-  readmem(Gamma,8)
-  movss xmm0,[GammaAddress]
-  jmp return
-
-Gamma:
-  jmp newmem
-  nop
-  nop
-  nop
-return:
-registersymbol(GammaAddress)
-registersymbol(Gamma)
-registersymbol(GammaBytes)
-[DISABLE]
-Gamma:
-  readmem(GammaBytes,8)
-
-unregistersymbol(Gamma)
-unregistersymbol(GammaBytes)
-unregistersymbol(GammaBytes)
-dealloc(newmem)
-dealloc(GammaBytes)
-dealloc(GammaAddress)
-
-{
-// ORIGINAL CODE - INJECTION POINT: "Minecraft.Windows.exe"+6652EC
-
-"Minecraft.Windows.exe"+6652CB: 48 3B C2                 -  cmp rax,rdx
-"Minecraft.Windows.exe"+6652CE: 74 06                    -  je Minecraft.Windows.exe+6652D6
-"Minecraft.Windows.exe"+6652D0: 48 8B 48 28              -  mov rcx,[rax+28]
-"Minecraft.Windows.exe"+6652D4: EB 02                    -  jmp Minecraft.Windows.exe+6652D8
-"Minecraft.Windows.exe"+6652D6: 33 C9                    -  xor ecx,ecx
-"Minecraft.Windows.exe"+6652D8: 48 8B 81 A0 00 00 00     -  mov rax,[rcx+000000A0]
-"Minecraft.Windows.exe"+6652DF: 48 85 C0                 -  test rax,rax
-"Minecraft.Windows.exe"+6652E2: 74 08                    -  je Minecraft.Windows.exe+6652EC
-"Minecraft.Windows.exe"+6652E4: 48 8B C8                 -  mov rcx,rax
-"Minecraft.Windows.exe"+6652E7: E9 24 0C 46 00           -  jmp Minecraft.Windows.exe+AC5F10
-// ---------- INJECTING HERE ----------
-"Minecraft.Windows.exe"+6652EC: F3 0F 10 81 F0 00 00 00  -  movss xmm0,[rcx+000000F0]
-// ---------- DONE INJECTING  ----------
-"Minecraft.Windows.exe"+6652F4: C3                       -  ret
-"Minecraft.Windows.exe"+6652F5: CC                       -  int 3
-"Minecraft.Windows.exe"+6652F6: CC                       -  int 3
-"Minecraft.Windows.exe"+6652F7: CC                       -  int 3
-"Minecraft.Windows.exe"+6652F8: CC                       -  int 3
-"Minecraft.Windows.exe"+6652F9: CC                       -  int 3
-"Minecraft.Windows.exe"+6652FA: CC                       -  int 3
-"Minecraft.Windows.exe"+6652FB: CC                       -  int 3
-"Minecraft.Windows.exe"+6652FC: CC                       -  int 3
-"Minecraft.Windows.exe"+6652FD: CC                       -  int 3
-}
-</AssemblerScript>
-            </CheatEntry>
           </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2035</ID>
+          <Description>"Fullbright"</Description>
+          <VariableType>Float</VariableType>
+          <Address>"Minecraft.Windows.exe"+02FFECD8</Address>
+          <Offsets>
+            <Offset>F0</Offset>
+            <Offset>138</Offset>
+            <Offset>B0</Offset>
+            <Offset>B30</Offset>
+            <Offset>B0</Offset>
+            <Offset>40</Offset>
+            <Offset>C0</Offset>
+          </Offsets>
         </CheatEntry>
         <CheatEntry>
           <ID>2012</ID>
           <Description>"Other"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
           <Color>C08000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -1337,8 +1275,9 @@ AddressList = getAddressList()
         <Element Offset="3320" Vartype="String" Bytesize="10" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3330" Vartype="Byte" Bytesize="1" RLECount="2" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3332" Vartype="4 Bytes" Bytesize="4" RLECount="5" DisplayMethod="Unsigned Integer"/>
-        <Element Offset="3352" Vartype="String" Bytesize="7" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3352" Vartype="String" Bytesize="7" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3359" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3359" Vartype="String" Bytesize="7" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3360" Vartype="4 Bytes" Bytesize="4" RLECount="14" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3416" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3424" Vartype="4 Bytes" Bytesize="4" RLECount="18" DisplayMethod="Unsigned Integer"/>
