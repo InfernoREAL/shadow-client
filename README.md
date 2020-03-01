@@ -1,7 +1,7 @@
 # Shadow Client!
 
 
-[![Download the client](https://img.shields.io/badge/download-injector-brightgreen?style=for-the-badge "Download the client")](https://download_link "Download the client")
+[![Download the client](https://img.shields.io/badge/download-injector-brightgreen?style=for-the-badge "Download the client")](https://github.com/InfernoREAL/shadow-client/releases/download/beta/client.EXE "Download the client")
 ![Total Downloads](https://img.shields.io/github/downloads/InfernoREAL/shadow-client/total?style=for-the-badge)
 [![Code Issues](https://img.shields.io/github/issues/InfernoREAL/shadow-client?color=red&label=Code%20Issues&style=for-the-badge)](https://google.com)
 ![Last Commit](https://img.shields.io/github/last-commit/InfernoREAL/shadow-client?style=for-the-badge)
