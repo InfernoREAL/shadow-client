@@ -12,24 +12,24 @@
       <Color>FF00FF</Color>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
-LuaCall(UDF1.Visible = true)
+LuaCall(Shadow.Visible = true)
 
 [DISABLE]
-LuaCall(UDF1.Visible = false)
+LuaCall(Shadow.Visible = false)
 </AssemblerScript>
     </CheatEntry>
     <CheatEntry>
       <ID>2021</ID>
       <Description>"Modules"</Description>
       <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1" moAllowManualCollapseAndExpand="1"/>
-      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <LastState Value="" RealAddress="00000000"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
           <ID>2009</ID>
           <Description>"Combat"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <Color>0000FF</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -164,7 +164,7 @@ dealloc(originalNoKnock)
           <ID>2010</ID>
           <Description>"Movement"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <Color>008000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -296,7 +296,7 @@ dealloc(WJumpHight)
           <ID>2011</ID>
           <Description>"Visual"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <Color>FF0000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -574,7 +574,7 @@ dealloc(GammaAddress)
           <ID>2012</ID>
           <Description>"Other"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <Color>C08000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
