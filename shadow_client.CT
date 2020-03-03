@@ -54,14 +54,14 @@ Shadow.formStyle='fsNormal'
       <ID>2021</ID>
       <Description>"Modules"</Description>
       <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1" moAllowManualCollapseAndExpand="1"/>
-      <LastState Value="" RealAddress="00000000"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
           <ID>2009</ID>
           <Description>"Combat"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
           <Color>0000FF</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -199,7 +199,7 @@ dealloc(originalNoKnock)
           <ID>2010</ID>
           <Description>"Movement"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
           <Color>008000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -344,19 +344,74 @@ dealloc(WJumpHight)
               </Offsets>
             </CheatEntry>
             <CheatEntry>
-              <ID>85</ID>
-              <Description>"AirJump"</Description>
-              <VariableType>4 Bytes</VariableType>
-              <Address>"Minecraft.Windows.exe"+03036708</Address>
-              <Offsets>
-                <Offset>178</Offset>
-                <Offset>0</Offset>
-                <Offset>150</Offset>
-                <Offset>78</Offset>
-                <Offset>68</Offset>
-                <Offset>20</Offset>
-                <Offset>10</Offset>
-              </Offsets>
+              <ID>2036</ID>
+              <Description>"Airjump"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : Minecraft.Windows.exe
+  Version: 
+  Date   : 2020-03-01
+  Author : Xt5ga
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(Airjump,Minecraft.Windows.exe,44 88 87 78 01 00 00) // should be unique
+alloc(newmem,$1000,"Minecraft.Windows.exe"+121090E)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  //mov [rdi+00000178],r8l
+  jmp return
+
+Airjump:
+  jmp newmem
+  nop 2
+return:
+registersymbol(Airjump)
+
+[DISABLE]
+
+Airjump:
+  db 44 88 87 78 01 00 00
+
+unregistersymbol(Airjump)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "Minecraft.Windows.exe"+121090E
+
+"Minecraft.Windows.exe"+12108EF: 72 15                    -  jb Minecraft.Windows.exe+1210906
+"Minecraft.Windows.exe"+12108F1: 80 BF 78 01 00 00 00     -  cmp byte ptr [rdi+00000178],00
+"Minecraft.Windows.exe"+12108F8: 74 11                    -  je Minecraft.Windows.exe+121090B
+"Minecraft.Windows.exe"+12108FA: 45 0F 2E DF              -  ucomiss xmm11,xmm15
+"Minecraft.Windows.exe"+12108FE: 75 0B                    -  jne Minecraft.Windows.exe+121090B
+"Minecraft.Windows.exe"+1210900: 45 0F 2E D9              -  ucomiss xmm11,xmm9
+"Minecraft.Windows.exe"+1210904: 75 05                    -  jne Minecraft.Windows.exe+121090B
+"Minecraft.Windows.exe"+1210906: 41 B0 01                 -  mov r8l,01
+"Minecraft.Windows.exe"+1210909: EB 03                    -  jmp Minecraft.Windows.exe+121090E
+"Minecraft.Windows.exe"+121090B: 45 32 C0                 -  xor r8l,r8l
+// ---------- INJECTING HERE ----------
+"Minecraft.Windows.exe"+121090E: 44 88 87 78 01 00 00     -  mov [rdi+00000178],r8l
+// ---------- DONE INJECTING  ----------
+"Minecraft.Windows.exe"+1210915: 84 C9                    -  test cl,cl
+"Minecraft.Windows.exe"+1210917: 75 04                    -  jne Minecraft.Windows.exe+121091D
+"Minecraft.Windows.exe"+1210919: 84 C0                    -  test al,al
+"Minecraft.Windows.exe"+121091B: 74 02                    -  je Minecraft.Windows.exe+121091F
+"Minecraft.Windows.exe"+121091D: B0 01                    -  mov al,01
+"Minecraft.Windows.exe"+121091F: 88 87 7C 01 00 00        -  mov [rdi+0000017C],al
+"Minecraft.Windows.exe"+1210925: 48 8B 07                 -  mov rax,[rdi]
+"Minecraft.Windows.exe"+1210928: 41 0F 28 CF              -  movaps xmm1,xmm15
+"Minecraft.Windows.exe"+121092C: 48 8B CF                 -  mov rcx,rdi
+"Minecraft.Windows.exe"+121092F: FF 90 38 05 00 00        -  call qword ptr [rax+00000538]
+}
+</AssemblerScript>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
@@ -364,7 +419,7 @@ dealloc(WJumpHight)
           <ID>2011</ID>
           <Description>"Visual"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
           <Color>FF0000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -561,7 +616,6 @@ dealloc(zoomflag)
             <CheatEntry>
               <ID>2035</ID>
               <Description>"Fullbright"</Description>
-              <LastState Value="1" RealAddress="21C764F2030"/>
               <VariableType>Float</VariableType>
               <Address>"Minecraft.Windows.exe"+02FFECD8</Address>
               <Offsets>
@@ -580,7 +634,7 @@ dealloc(zoomflag)
           <ID>2012</ID>
           <Description>"Other"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
           <Color>C08000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -676,6 +730,113 @@ dealloc(newmem)
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Change of mov [rbx+00000179],al</Description>
+      <AddressString>Minecraft.Windows.exe+8A936D</AddressString>
+      <Before>
+        <Byte>83</Byte>
+        <Byte>78</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>88</Byte>
+        <Byte>83</Byte>
+        <Byte>79</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>E8</Byte>
+        <Byte>B8</Byte>
+        <Byte>5E</Byte>
+        <Byte>96</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of mov [rdi+0000017A],cl</Description>
+      <AddressString>Minecraft.Windows.exe+12108CD</AddressString>
+      <Before>
+        <Byte>C9</Byte>
+        <Byte>EB</Byte>
+        <Byte>02</Byte>
+        <Byte>B1</Byte>
+        <Byte>01</Byte>
+      </Before>
+      <Actual>
+        <Byte>88</Byte>
+        <Byte>8F</Byte>
+        <Byte>7A</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>45</Byte>
+        <Byte>0F</Byte>
+        <Byte>2E</Byte>
+        <Byte>DF</Byte>
+        <Byte>74</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of mov [rdi+0000017B],al</Description>
+      <AddressString>Minecraft.Windows.exe+12108DF</AddressString>
+      <Before>
+        <Byte>01</Byte>
+        <Byte>EB</Byte>
+        <Byte>02</Byte>
+        <Byte>32</Byte>
+        <Byte>C0</Byte>
+      </Before>
+      <Actual>
+        <Byte>88</Byte>
+        <Byte>87</Byte>
+        <Byte>7B</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>45</Byte>
+        <Byte>0F</Byte>
+        <Byte>2E</Byte>
+        <Byte>DF</Byte>
+        <Byte>74</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of mov [rdi+00000178],r8l</Description>
+      <AddressString>Minecraft.Windows.exe+121090E</AddressString>
+      <Before>
+        <Byte>EB</Byte>
+        <Byte>03</Byte>
+        <Byte>45</Byte>
+        <Byte>32</Byte>
+        <Byte>C0</Byte>
+      </Before>
+      <Actual>
+        <Byte>44</Byte>
+        <Byte>88</Byte>
+        <Byte>87</Byte>
+        <Byte>78</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>84</Byte>
+        <Byte>C9</Byte>
+        <Byte>75</Byte>
+        <Byte>04</Byte>
+        <Byte>84</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
   <UserdefinedSymbols/>
   <Structures StructVersion="2">
     <Structure Name="unnamed structure" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
@@ -937,9 +1098,8 @@ dealloc(newmem)
         <Element Offset="3320" Vartype="String" Bytesize="10" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3330" Vartype="Byte" Bytesize="1" RLECount="2" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3332" Vartype="4 Bytes" Bytesize="4" RLECount="5" DisplayMethod="Unsigned Integer"/>
-        <Element Offset="3352" Vartype="String" Bytesize="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3352" Vartype="String" Bytesize="7" RLECount="2" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3359" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
-        <Element Offset="3359" Vartype="String" Bytesize="7" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3360" Vartype="4 Bytes" Bytesize="4" RLECount="14" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3416" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3424" Vartype="4 Bytes" Bytesize="4" RLECount="18" DisplayMethod="Unsigned Integer"/>
