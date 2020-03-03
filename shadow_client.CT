@@ -39,7 +39,7 @@ DebugLog("Shadow.Visible = false")
           <ID>2015</ID>
           <Description>"Stay on top"</Description>
           <Options moHideChildren="1"/>
-          <LastState Activated="1"/>
+          <LastState/>
           <Color>000000</Color>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
@@ -197,6 +197,90 @@ dealloc(originalNoKnock)
 }
 </AssemblerScript>
             </CheatEntry>
+            <CheatEntry>
+              <ID>2039</ID>
+              <Description>"Reach"</Description>
+              <DropDownList>3:Default
+7:Max
+</DropDownList>
+              <LastState Value="3" RealAddress="7FF6A4640EC8"/>
+              <Color>8080FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>Minecraft.Windows.exe+2080EC8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2041</ID>
+              <Description>"hitbox"</Description>
+              <LastState/>
+              <Color>8080FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : Minecraft.Windows.exe
+  Version: 
+  Date   : 2020-03-02
+  Author : Xt5ga
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(Hitbox,Minecraft.Windows.exe,F3 0F 10 81 4C 04 00 00 C3) // should be unique
+alloc(newmem,$1000,"Minecraft.Windows.exe"+121A420)
+
+label(code)
+label(return)
+
+newmem:
+  movss xmm0,[rcx+0000044C]
+  jmp code
+
+code:
+  mov [rcx+0000044C],(float)10
+  jmp return
+
+Hitbox:
+  jmp newmem
+  nop 3
+return:
+registersymbol(Hitbox)
+
+[DISABLE]
+
+Hitbox:
+  db F3 0F 10 81 4C 04 00 00
+
+unregistersymbol(Hitbox)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "Minecraft.Windows.exe"+121A420
+
+"Minecraft.Windows.exe"+121A416: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A417: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A418: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A419: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A41A: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A41B: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A41C: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A41D: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A41E: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A41F: CC                          -  int 3 
+// ---------- INJECTING HERE ----------
+"Minecraft.Windows.exe"+121A420: F3 0F 10 81 4C 04 00 00     -  movss xmm0,[rcx+0000044C]
+// ---------- DONE INJECTING  ----------
+"Minecraft.Windows.exe"+121A428: C3                          -  ret 
+"Minecraft.Windows.exe"+121A429: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A42A: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A42B: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A42C: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A42D: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A42E: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A42F: CC                          -  int 3 
+"Minecraft.Windows.exe"+121A430: 80 B9 61 03 00 00 00        -  cmp byte ptr [rcx+00000361],00
+"Minecraft.Windows.exe"+121A437: 0F 94 C0                    -  sete al
+}
+</AssemblerScript>
+            </CheatEntry>
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
@@ -335,6 +419,7 @@ dealloc(WJumpHight)
             <CheatEntry>
               <ID>93</ID>
               <Description>"Speed"</Description>
+              <LastState Value="0.1000000015" RealAddress="214ACB501FC"/>
               <VariableType>Float</VariableType>
               <Address>"Minecraft.Windows.exe"+030366B8</Address>
               <Offsets>
@@ -414,6 +499,76 @@ dealloc(newmem)
 "Minecraft.Windows.exe"+1210928: 41 0F 28 CF              -  movaps xmm1,xmm15
 "Minecraft.Windows.exe"+121092C: 48 8B CF                 -  mov rcx,rdi
 "Minecraft.Windows.exe"+121092F: FF 90 38 05 00 00        -  call qword ptr [rax+00000538]
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2043</ID>
+              <Description>"NoWeb"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : Minecraft.Windows.exe
+  Version: 
+  Date   : 2020-03-02
+  Author : Xt5ga
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(NoWeb,Minecraft.Windows.exe,F3 0F 11 89 38 02 00 00 C7 81 94 01 00 00 00 00 00 00 C3 CC CC CC CC CC CC CC CC 48) // should be unique
+alloc(newmem,$1000,"Minecraft.Windows.exe"+1211905)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  //movss [rcx+00000238],xmm1
+  jmp return
+
+NoWeb:
+  jmp newmem
+  nop 3
+return:
+registersymbol(NoWeb)
+
+[DISABLE]
+
+NoWeb:
+  db F3 0F 11 89 38 02 00 00
+
+unregistersymbol(NoWeb)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "Minecraft.Windows.exe"+1211905
+
+"Minecraft.Windows.exe"+12118EA: 41 5F                          -  pop r15
+"Minecraft.Windows.exe"+12118EC: 41 5E                          -  pop r14
+"Minecraft.Windows.exe"+12118EE: 5F                             -  pop rdi
+"Minecraft.Windows.exe"+12118EF: C3                             -  ret 
+"Minecraft.Windows.exe"+12118F0: F3 0F 10 91 38 02 00 00        -  movss xmm2,[rcx+00000238]
+"Minecraft.Windows.exe"+12118F8: 0F 57 C0                       -  xorps xmm0,xmm0
+"Minecraft.Windows.exe"+12118FB: 0F 2E D0                       -  ucomiss xmm2,xmm0
+"Minecraft.Windows.exe"+12118FE: 74 05                          -  je Minecraft.Windows.exe+1211905
+"Minecraft.Windows.exe"+1211900: 0F 2F CA                       -  comiss xmm1,xmm2
+"Minecraft.Windows.exe"+1211903: 73 12                          -  jae Minecraft.Windows.exe+1211917
+// ---------- INJECTING HERE ----------
+"Minecraft.Windows.exe"+1211905: F3 0F 11 89 38 02 00 00        -  movss [rcx+00000238],xmm1
+// ---------- DONE INJECTING  ----------
+"Minecraft.Windows.exe"+121190D: C7 81 94 01 00 00 00 00 00 00  -  mov [rcx+00000194],00000000
+"Minecraft.Windows.exe"+1211917: C3                             -  ret 
+"Minecraft.Windows.exe"+1211918: CC                             -  int 3 
+"Minecraft.Windows.exe"+1211919: CC                             -  int 3 
+"Minecraft.Windows.exe"+121191A: CC                             -  int 3 
+"Minecraft.Windows.exe"+121191B: CC                             -  int 3 
+"Minecraft.Windows.exe"+121191C: CC                             -  int 3 
+"Minecraft.Windows.exe"+121191D: CC                             -  int 3 
+"Minecraft.Windows.exe"+121191E: CC                             -  int 3 
+"Minecraft.Windows.exe"+121191F: CC                             -  int 3 
 }
 </AssemblerScript>
             </CheatEntry>
@@ -620,6 +775,7 @@ dealloc(zoomflag)
             <CheatEntry>
               <ID>2035</ID>
               <Description>"Fullbright"</Description>
+              <LastState Value="1" RealAddress="21491F3B630"/>
               <VariableType>Float</VariableType>
               <Address>"Minecraft.Windows.exe"+02FFECD8</Address>
               <Offsets>
@@ -717,6 +873,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>123</ID>
               <Description>"Fake Creative"</Description>
+              <LastState Value="1" RealAddress="2149F713004"/>
               <VariableType>4 Bytes</VariableType>
               <Address>"Minecraft.Windows.exe"+03036708</Address>
               <Offsets>
@@ -734,7 +891,7 @@ dealloc(newmem)
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
-      <ID>2036</ID>
+      <ID>2037</ID>
       <Description>"D3bug"</Description>
       <Options moHideChildren="1" moActivateChildrenAsWell="1"/>
       <LastState/>
@@ -749,7 +906,7 @@ DebugLog('DebugWindow.Visible = false')
 </AssemblerScript>
       <CheatEntries>
         <CheatEntry>
-          <ID>2037</ID>
+          <ID>2038</ID>
           <Description>"Stay on top"</Description>
           <Options moHideChildren="1"/>
           <LastState Activated="1"/>
@@ -766,6 +923,13 @@ DebugLog("DebugWindow.formStyle=fsNormal")
 </AssemblerScript>
         </CheatEntry>
       </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2044</ID>
+      <Description>"No description"</Description>
+      <LastState Value="0" RealAddress="21491EA68C0"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>21491EA68C0</Address>
     </CheatEntry>
   </CheatEntries>
   <CheatCodes>
@@ -872,6 +1036,34 @@ DebugLog("DebugWindow.formStyle=fsNormal")
         <Byte>75</Byte>
         <Byte>04</Byte>
         <Byte>84</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of movss [rcx+00000238],xmm1</Description>
+      <AddressString>Minecraft.Windows.exe+1211905</AddressString>
+      <Before>
+        <Byte>0F</Byte>
+        <Byte>2F</Byte>
+        <Byte>CA</Byte>
+        <Byte>73</Byte>
+        <Byte>12</Byte>
+      </Before>
+      <Actual>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>11</Byte>
+        <Byte>89</Byte>
+        <Byte>38</Byte>
+        <Byte>02</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>C7</Byte>
+        <Byte>81</Byte>
+        <Byte>94</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
       </After>
     </CodeEntry>
   </CheatCodes>
@@ -1136,8 +1328,9 @@ DebugLog("DebugWindow.formStyle=fsNormal")
         <Element Offset="3320" Vartype="String" Bytesize="10" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3330" Vartype="Byte" Bytesize="1" RLECount="2" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3332" Vartype="4 Bytes" Bytesize="4" RLECount="5" DisplayMethod="Unsigned Integer"/>
-        <Element Offset="3352" Vartype="String" Bytesize="7" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3352" Vartype="String" Bytesize="7" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3359" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3359" Vartype="String" Bytesize="7" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3360" Vartype="4 Bytes" Bytesize="4" RLECount="14" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3416" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
         <Element Offset="3424" Vartype="4 Bytes" Bytesize="4" RLECount="18" DisplayMethod="Unsigned Integer"/>
