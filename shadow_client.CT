@@ -1014,6 +1014,13 @@ dealloc(newmem)
 }
 </AssemblerScript>
         </CheatEntry>
+        <CheatEntry>
+          <ID>2054</ID>
+          <Description>"player in inventory(freeze)"</Description>
+          <LastState Value="35521459" RealAddress="7FF6666B1A54"/>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Minecraft.Windows.exe+29E1A54</Address>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
