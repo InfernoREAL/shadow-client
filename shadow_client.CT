@@ -51,40 +51,68 @@ Shadow.formStyle='fsNormal'
 DebugLog("Shadow.formStyle='fsNormal'")
 </AssemblerScript>
         </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2037</ID>
+      <Description>"D3bug"</Description>
+      <Options moHideChildren="1" moActivateChildrenAsWell="1"/>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+[ENABLE]
+DebugWindow.Visible = true
+DebugLog('DebugWindow.Visible = true')
+[DISABLE]
+DebugWindow.Visible = false
+DebugLog('DebugWindow.Visible = false')
+</AssemblerScript>
+      <CheatEntries>
         <CheatEntry>
-          <ID>2046</ID>
-          <Description>"On close clickgui dont close CE"</Description>
+          <ID>2038</ID>
+          <Description>"Stay on top"</Description>
+          <Options moHideChildren="1"/>
           <LastState/>
+          <Color>000000</Color>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
 {$lua}
-function CloseClick()
-Shadow.Visible = false
-DebugLog("Shadow.Visible = false")
-end
+DebugWindow.formStyle='fsSystemStayOnTop'
+DebugLog("DebugWindow.formStyle=fsSystemStayOnTop")
 [DISABLE]
 {$lua}
-function CloseClick()
-  --called by the close button onClick event, and when closing the form
-  closeCE()
-  return caFree --onClick doesn't care
-end
+DebugWindow.formStyle='fsNormal'
+DebugLog("DebugWindow.formStyle=fsNormal")
 </AssemblerScript>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
+      <ID>2045</ID>
+      <Description>"CE on top"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+{$lua}
+MainForm.formStyle='fsSystemStayOnTop'
+
+[DISABLE]
+{$lua}
+MainForm.formStyle='fsNormal'
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
       <ID>2021</ID>
       <Description>"Modules"</Description>
       <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1" moAllowManualCollapseAndExpand="1"/>
-      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <LastState Value="" RealAddress="00000000"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
           <ID>2009</ID>
           <Description>"Combat"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <Color>0000FF</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -222,7 +250,7 @@ dealloc(originalNoKnock)
               <DropDownList>3:Default
 7:Max
 </DropDownList>
-              <LastState Value="3" RealAddress="7FF6848C0EC8"/>
+              <LastState Value="3" RealAddress="7FF665D50EC8"/>
               <Color>8080FF</Color>
               <VariableType>Float</VariableType>
               <Address>Minecraft.Windows.exe+2080EC8</Address>
@@ -306,7 +334,7 @@ dealloc(newmem)
           <ID>2010</ID>
           <Description>"Movement"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <Color>008000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -438,7 +466,7 @@ dealloc(WJumpHight)
             <CheatEntry>
               <ID>93</ID>
               <Description>"Speed"</Description>
-              <LastState Value="0.6999999881" RealAddress="2162DFC145C"/>
+              <LastState Value="0.1000000015" RealAddress="19562C1129C"/>
               <Color>00C100</Color>
               <VariableType>Float</VariableType>
               <Address>"Minecraft.Windows.exe"+030366B8</Address>
@@ -600,7 +628,7 @@ dealloc(newmem)
           <ID>2011</ID>
           <Description>"Visual"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <Color>FF0000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -722,7 +750,7 @@ dealloc(HurtcamBytes)
             <CheatEntry>
               <ID>2035</ID>
               <Description>"Fullbright"</Description>
-              <LastState Value="1" RealAddress="2160C81CC30"/>
+              <LastState Value="1" RealAddress="1954EAFEA30"/>
               <Color>FF8080</Color>
               <VariableType>Float</VariableType>
               <Address>"Minecraft.Windows.exe"+02FFECD8</Address>
@@ -742,7 +770,7 @@ dealloc(HurtcamBytes)
           <ID>2012</ID>
           <Description>"Other"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <Color>C08000</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -821,7 +849,7 @@ dealloc(newmem)
             <CheatEntry>
               <ID>123</ID>
               <Description>"Fake Creative"</Description>
-              <LastState Value="0" RealAddress="2162BF49A04"/>
+              <LastState Value="5" RealAddress="1956DC20C04"/>
               <Color>FFFF00</Color>
               <VariableType>4 Bytes</VariableType>
               <Address>"Minecraft.Windows.exe"+03036708</Address>
@@ -840,58 +868,153 @@ dealloc(newmem)
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
-      <ID>2037</ID>
-      <Description>"D3bug"</Description>
-      <Options moHideChildren="1" moActivateChildrenAsWell="1"/>
-      <LastState/>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>{$lua}
-[ENABLE]
-DebugWindow.Visible = true
-DebugLog('DebugWindow.Visible = true')
-[DISABLE]
-DebugWindow.Visible = false
-DebugLog('DebugWindow.Visible = false')
-</AssemblerScript>
+      <ID>2052</ID>
+      <Description>"inventory stuff - pickup a stack in inventory (purely cosmetic)"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
-          <ID>2038</ID>
-          <Description>"Stay on top"</Description>
-          <Options moHideChildren="1"/>
+          <ID>2049</ID>
+          <Description>"0"</Description>
+          <Options moHideChildren="1" moActivateChildrenAsWell="1"/>
           <LastState/>
-          <Color>000000</Color>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>[ENABLE]
-{$lua}
-DebugWindow.formStyle='fsSystemStayOnTop'
-DebugLog("DebugWindow.formStyle=fsSystemStayOnTop")
+          <AssemblerScript>{ Game   : Minecraft.Windows.exe
+  Version:
+  Date   : 2020-03-17
+  Author : �imon
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(bruh,Minecraft.Windows.exe,89 83 88 00 00 00 48 8D 4D) // should be unique
+alloc(newmem,$1000,"Minecraft.Windows.exe"+2A1790)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+//mov [rbx+00000088],eax
+  jmp return
+
+bruh:
+  jmp newmem
+  nop
+return:
+registersymbol(bruh)
+
 [DISABLE]
-{$lua}
-DebugWindow.formStyle='fsNormal'
-DebugLog("DebugWindow.formStyle=fsNormal")
+
+bruh:
+  db 89 83 88 00 00 00
+
+unregistersymbol(bruh)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "Minecraft.Windows.exe"+2A1790
+
+"Minecraft.Windows.exe"+2A1763: 89 45 38              -  mov [rbp+38],eax
+"Minecraft.Windows.exe"+2A1766: 48 8B 87 68 06 00 00  -  mov rax,[rdi+00000668]
+"Minecraft.Windows.exe"+2A176D: 48 8B 48 20           -  mov rcx,[rax+20]
+"Minecraft.Windows.exe"+2A1771: 48 8B 01              -  mov rax,[rcx]
+"Minecraft.Windows.exe"+2A1774: FF 90 B8 00 00 00     -  call qword ptr [rax+000000B8]
+"Minecraft.Windows.exe"+2A177A: 48 8D 98 50 11 00 00  -  lea rbx,[rax+00001150]
+"Minecraft.Windows.exe"+2A1781: 48 8D 55 B0           -  lea rdx,[rbp-50]
+"Minecraft.Windows.exe"+2A1785: 48 8B CB              -  mov rcx,rbx
+"Minecraft.Windows.exe"+2A1788: E8 03 A2 27 01        -  call Minecraft.Windows.exe+151B990
+"Minecraft.Windows.exe"+2A178D: 8B 45 38              -  mov eax,[rbp+38]
+// ---------- INJECTING HERE ----------
+"Minecraft.Windows.exe"+2A1790: 89 83 88 00 00 00     -  mov [rbx+00000088],eax
+// ---------- DONE INJECTING  ----------
+"Minecraft.Windows.exe"+2A1796: 48 8D 4D B0           -  lea rcx,[rbp-50]
+"Minecraft.Windows.exe"+2A179A: E8 D1 A3 E1 FF        -  call Minecraft.Windows.exe+BBB70
+"Minecraft.Windows.exe"+2A179F: 90                    -  nop
+"Minecraft.Windows.exe"+2A17A0: 48 8B 4D A8           -  mov rcx,[rbp-58]
+"Minecraft.Windows.exe"+2A17A4: 48 85 C9              -  test rcx,rcx
+"Minecraft.Windows.exe"+2A17A7: 74 0B                 -  je Minecraft.Windows.exe+2A17B4
+"Minecraft.Windows.exe"+2A17A9: 48 8B 01              -  mov rax,[rcx]
+"Minecraft.Windows.exe"+2A17AC: BA 01 00 00 00        -  mov edx,00000001
+"Minecraft.Windows.exe"+2A17B1: FF 10                 -  call qword ptr [rax]
+"Minecraft.Windows.exe"+2A17B3: 90                    -  nop
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2051</ID>
+          <Description>"99+"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : Minecraft.Windows.exe
+  Version: 
+  Date   : 2020-03-17
+  Author : �imon
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(hurb,Minecraft.Windows.exe,8B 8B 88 00 00 00 83) // should be unique
+alloc(newmem,$1000,"Minecraft.Windows.exe"+2AA55C)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+//mov ecx,[rbx+00000088]
+  jmp return
+
+hurb:
+  jmp newmem
+  nop
+return:
+registersymbol(hurb)
+
+[DISABLE]
+
+hurb:
+  db 8B 8B 88 00 00 00
+
+unregistersymbol(hurb)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "Minecraft.Windows.exe"+2AA55C
+
+"Minecraft.Windows.exe"+2AA539: 48 85 C9                 -  test rcx,rcx
+"Minecraft.Windows.exe"+2AA53C: 74 1E                    -  je Minecraft.Windows.exe+2AA55C
+"Minecraft.Windows.exe"+2AA53E: 48 8B 01                 -  mov rax,[rcx]
+"Minecraft.Windows.exe"+2AA541: FF 90 A8 00 00 00        -  call qword ptr [rax+000000A8]
+"Minecraft.Windows.exe"+2AA547: 66 85 C0                 -  test ax,ax
+"Minecraft.Windows.exe"+2AA54A: 7E 10                    -  jle Minecraft.Windows.exe+2AA55C
+"Minecraft.Windows.exe"+2AA54C: 48 8B CB                 -  mov rcx,rbx
+"Minecraft.Windows.exe"+2AA54F: E8 0C F7 26 01           -  call Minecraft.Windows.exe+1519C60
+"Minecraft.Windows.exe"+2AA554: 84 C0                    -  test al,al
+"Minecraft.Windows.exe"+2AA556: 0F 85 CE 00 00 00        -  jne Minecraft.Windows.exe+2AA62A
+// ---------- INJECTING HERE ----------
+"Minecraft.Windows.exe"+2AA55C: 8B 8B 88 00 00 00        -  mov ecx,[rbx+00000088]
+// ---------- DONE INJECTING  ----------
+"Minecraft.Windows.exe"+2AA562: 83 F9 01                 -  cmp ecx,01
+"Minecraft.Windows.exe"+2AA565: 0F 84 BF 00 00 00        -  je Minecraft.Windows.exe+2AA62A
+"Minecraft.Windows.exe"+2AA56B: 85 C9                    -  test ecx,ecx
+"Minecraft.Windows.exe"+2AA56D: 78 52                    -  js Minecraft.Windows.exe+2AA5C1
+"Minecraft.Windows.exe"+2AA56F: 83 F9 0A                 -  cmp ecx,0A
+"Minecraft.Windows.exe"+2AA572: 7D 0E                    -  jnl Minecraft.Windows.exe+2AA582
+"Minecraft.Windows.exe"+2AA574: 80 C1 30                 -  add cl,30
+"Minecraft.Windows.exe"+2AA577: 40 88 74 24 21           -  mov [rsp+21],sil
+"Minecraft.Windows.exe"+2AA57C: 88 4C 24 20              -  mov [rsp+20],cl
+"Minecraft.Windows.exe"+2AA580: EB 3F                    -  jmp Minecraft.Windows.exe+2AA5C1
+}
 </AssemblerScript>
         </CheatEntry>
       </CheatEntries>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>2045</ID>
-      <Description>"CE on top"</Description>
-      <LastState/>
-      <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>[ENABLE]
-{$lua}
-MainForm.formStyle='fsSystemStayOnTop'
-
-[DISABLE]
-{$lua}
-MainForm.formStyle='fsNormal'
-</AssemblerScript>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>2044</ID>
-      <Description>"No description"</Description>
-      <VariableType>4 Bytes</VariableType>
-      <Address>21491EA68C0</Address>
     </CheatEntry>
   </CheatEntries>
   <CheatCodes>
@@ -1026,6 +1149,86 @@ MainForm.formStyle='fsNormal'
         <Byte>94</Byte>
         <Byte>01</Byte>
         <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of cmp dword ptr [rcx+00000088],00</Description>
+      <AddressString>Minecraft.Windows.exe+1511BC9</AddressString>
+      <Before>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>54</Byte>
+        <Byte>24</Byte>
+        <Byte>30</Byte>
+      </Before>
+      <Actual>
+        <Byte>83</Byte>
+        <Byte>B9</Byte>
+        <Byte>88</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>0F</Byte>
+        <Byte>8E</Byte>
+        <Byte>1B</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of movzx esi,byte ptr [rsi+00000088]</Description>
+      <AddressString>Minecraft.Windows.exe+1511C01</AddressString>
+      <Before>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>7C</Byte>
+        <Byte>24</Byte>
+        <Byte>40</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>B6</Byte>
+        <Byte>B6</Byte>
+        <Byte>88</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>8D</Byte>
+        <Byte>4C</Byte>
+        <Byte>24</Byte>
+        <Byte>40</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of mov ecx,[rbx+00000088]</Description>
+      <AddressString>Minecraft.Windows.exe+2AA55C</AddressString>
+      <Before>
+        <Byte>85</Byte>
+        <Byte>CE</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>8B</Byte>
+        <Byte>8B</Byte>
+        <Byte>88</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>83</Byte>
+        <Byte>F9</Byte>
+        <Byte>01</Byte>
+        <Byte>0F</Byte>
+        <Byte>84</Byte>
       </After>
     </CodeEntry>
   </CheatCodes>
@@ -3024,7 +3227,7 @@ end
 Arraylist.setLayeredAttributes(0xFF00FF, 240, 1)
 Arraylist.visible = false
 
-Shadow.Visible = true
+Shadow.Visible = false
 
 Arraylist.rapid.Font.Color=0x6D6D6D
 Arraylist.rapidb.Font.Color=0x6D6D6D
@@ -3098,11 +3301,11 @@ clearDebugLog()
 DebugWindow.Visible = false
 --------------------------------------------------------------------------------
 function CloseClick()
-  --called by the close button onClick event, and when closing the form
-  closeCE()
-  return caFree --onClick doesn't care
+Shadow.Visible = false
+DebugLog("Shadow.Visible = false")
 end
 --TRAINERGENERATORSTOP--
+Shadow.Visible = false
 </LuaScript>
   <DisassemblerComments>
     <DisassemblerComment>
