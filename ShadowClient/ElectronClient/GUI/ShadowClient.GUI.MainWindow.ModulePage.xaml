@@ -1,0 +1,44 @@
+﻿<Page x:Class="ElectronClient.GUI.MainWindow_ModulePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ElectronClient.GUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShadowClient">
+
+    <Grid>
+        <Grid Margin="10">
+            <ScrollViewer HorizontalAlignment="Left">
+                <StackPanel VerticalAlignment="Top" Width="780">
+                    <Grid x:Name="SGrid_Airjump" Height="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1" x:Name="SModule_Airjump" Style="{StaticResource SC_Button}" Content="On" Margin="5" Foreground="Black" Click="SModule_Airjump_Click"/>
+                        <TextBlock x:Name="STextBlock_Airjump" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Airjump" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="Black" FontSize="20" FontFamily="Consolas"/>
+                    </Grid>
+                    <Grid x:Name="SGrid_NoFall" Height="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1" x:Name="SModule_NoFall" Style="{StaticResource SC_Button}" Content="On" Margin="5" Click="SModule_NoFall_Click"/>
+                        <TextBlock x:Name="STextBlock_NoFall" HorizontalAlignment="Left" TextWrapping="Wrap" Text="NoFall" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="Black" FontSize="20" FontFamily="Consolas"/>
+                    </Grid>
+                    <Grid x:Name="SGrid_Template" Height="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1" x:Name="SModule_Template" Style="{StaticResource SC_Button}" Content="On" Margin="5"/>
+                        <TextBlock x:Name="STextBlock_Template" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Template" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="Black" FontSize="20" FontFamily="Consolas"/>
+                    </Grid>
+                    <!--Paste Modules here -->
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

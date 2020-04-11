@@ -1,0 +1,45 @@
+﻿<Page x:Class="ElectronClient.GUI.OverlayPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ElectronClient.GUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShadowClient">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="30,60,0,0">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Border BorderBrush="#FFB5ADFF" BorderThickness="2" Background="#B2000000"/>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Width="230">
+                    <TextBlock TextWrapping="Wrap" Text="ElectronClient" Foreground="#FFB5ADFF" FontSize="26" FontFamily="Cascadia Code" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Border BorderBrush="#FFB5ADFF" BorderThickness="0,0,0,2" Margin="0,2,0,0"/>
+                    <Grid>
+                        <StackPanel Margin="5">
+                            <TextBlock TextWrapping="Wrap" Text="Movement" Foreground="Black" FontFamily="Cascadia Code" FontSize="20" Background="#FFB5ADFF"/>
+                            <TextBlock TextWrapping="Wrap" Text="Combat" Foreground="#FFB5ADFF" FontFamily="Cascadia Code" FontSize="20"/>
+                            <TextBlock TextWrapping="Wrap" Text="Player" Foreground="#FFB5ADFF" FontFamily="Cascadia Code" FontSize="20"/>
+                            <TextBlock TextWrapping="Wrap" Text="World" Foreground="#FFB5ADFF" FontFamily="Cascadia Code" FontSize="20"/>
+                            <TextBlock TextWrapping="Wrap" Text="Exploits" Foreground="#FFB5ADFF" FontFamily="Cascadia Code" FontSize="20"/>
+                            <TextBlock TextWrapping="Wrap" Text="Other" Foreground="#FFB5ADFF" FontFamily="Cascadia Code" FontSize="20"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Width="150" Margin="-2,35,0,0" VerticalAlignment="Top">
+                <Border BorderBrush="#FFB5ADFF" BorderThickness="2" Background="#B2000000" Margin="0"/>
+                <Grid Margin="0,5">
+                    <StackPanel Margin="10,5">
+                        <TextBlock TextWrapping="Wrap" Text="Speed" Foreground="Black" FontFamily="Cascadia Code" FontSize="20" Background="#FFB5ADFF"/>
+                        <TextBlock TextWrapping="Wrap" Text="Airjump" Foreground="#FFB5ADFF" FontFamily="Cascadia Code" FontSize="20"/>
+                        <TextBlock TextWrapping="Wrap" Text="Fly" Foreground="#FFB5ADFF" FontFamily="Cascadia Code" FontSize="20"/>
+                        <TextBlock TextWrapping="Wrap" Text="Glide" Foreground="#FFB5ADFF" FontFamily="Cascadia Code" FontSize="20"/>
+                        <TextBlock TextWrapping="Wrap" Text="Jetpack" Foreground="#FFB5ADFF" FontFamily="Cascadia Code" FontSize="20"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</Page>
